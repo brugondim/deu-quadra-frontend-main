@@ -68,7 +68,10 @@ export function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder={language.passwordButtonPlaceholder}
-        />
+          />
+          <div className="flex justify-between items-center mt-3">
+          <a href="/reset" className="text-sm text-blue-500 hover:underline">Esqueci minha senha</a>
+          </div>
                <div className="flex w-full justify-between px-2 mt-3">
           
         <button
@@ -84,6 +87,7 @@ export function Login() {
           >
             {language.LoginPageButton}
           </button>
+          
           </div>
       </form>
     </div>
