@@ -70,7 +70,7 @@ export function Login() {
           placeholder={language.passwordButtonPlaceholder}
           />
           <div className="flex justify-between items-center mt-3">
-          <a href="/reset" className="text-sm text-blue-500 hover:underline">Esqueci minha senha</a>
+          <a href="/Reset" className="text-sm text-blue-500 hover:underline">Esqueci minha senha</a>
           </div>
                <div className="flex w-full justify-between px-2 mt-3">
           
