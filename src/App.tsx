@@ -18,6 +18,8 @@ import { LanguageContext } from './contexts/Language';
 import { LanguageProvider } from './hooks/Language';
 import { SignupPage } from './pages/SimplePage/Login/SignupPage';
 import { ResetPasswordPage } from './pages/SimplePage/Login/ResetPasswordPage';
+import { PresignupPage } from './pages/SimplePage/Login/PresignupPage';
+import { SignupUserPage } from './pages/SimplePage/Login/SignupUserPage';
 
 export function App() {
   const authentication = useAuth();
@@ -33,6 +35,8 @@ export function App() {
                 <Route path="/" element={<LandingPage />}></Route>
                 <Route path="/login" element={<LoginPage />}></Route>
                 <Route path="/signup" element={<SignupPage />}></Route>
+                <Route path="/signupuser" element={<SignupUserPage />}></Route>
+                <Route path="/presignup" element={<PresignupPage />}></Route>
                 <Route path="/reset" element={<ResetPasswordPage />}></Route>
                 <Route path="/search" element={<SearchPage />} />
                 <Route
