@@ -31,7 +31,7 @@ export const ptBr: LanguageContextType = {
   welcome: 'Bem vindo, ',
   changeLanguage: 'Mudar idioma',
   passwordLabel: 'Senha',
-  cardButtonAction: 'Alugar',
+  cardButtonAction: 'Agenda',
 };
 
 export const enUS: LanguageContextType = {

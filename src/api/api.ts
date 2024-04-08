@@ -1,10 +1,11 @@
 import axios, { AxiosResponse } from 'axios';
 import { useAuth } from '../hooks/Auth';
-import { GetCourtsOutput, LoginOutput } from './endpointsOutput';
+import { GetCourtsOutput, LoginOutput, GetEmpresasOutput } from './endpointsOutput';
 
 export interface AuthResult {
   login: (email: string, password: string)=> Promise<AxiosResponse<LoginOutput, any>>;
   getCourts: (lat:number,lon: number, distanceInKillometers: number)=> Promise<AxiosResponse<GetCourtsOutput[], any>>;
+  getEmpresas: (nome:string, idEmpresa: number, rua: string, bairro: string,numero: string)=> Promise<AxiosResponse<GetEmpresasOutput[], any>>;
 }
 
 export function useApi(): AuthResult {
@@ -22,6 +23,12 @@ export function useApi(): AuthResult {
     });
   }
 
+  async function getEmpresas(nome: string, idEmpresa: number, rua: string, bairro: string,numero: string): Promise<AxiosResponse<GetEmpresasOutput[], any>> {
+    return client.get<GetEmpresasOutput>('/empresas/', {
+      nome, idEmpresa, rua, bairro,numero,
+    });
+  }
+
   async function getCourts(lat:number,lon: number, distanceInKillometers: number): Promise<AxiosResponse<GetCourtsOutput[], any>> {
     return client.post<GetCourtsOutput[]>('/courts/search',{
         coordinates: {
@@ -32,5 +39,5 @@ export function useApi(): AuthResult {
       }
     })
   }
-  return { login, getCourts };
+  return { login, getCourts, getEmpresas };
 }

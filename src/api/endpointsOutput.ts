@@ -19,3 +19,20 @@ export type GetCourtsOutput = {
         lon: number
     }
   }
+
+  export type GetEmpresasOutput = {
+        nome: string,
+        idEmpresa: number,
+        rua: string,
+        bairro: string,
+        numero: string,
+        lat: number,
+        lon: number
+        courtsModelList: {
+            nome: string,
+            preco: number,
+            descricao: string,
+            idQuadra:number,
+            imagemUrl: string,
+        }
+  } 
